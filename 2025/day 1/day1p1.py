@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 
 ticks = tuple(range(100))
 current_tick = 50
@@ -10,16 +12,15 @@ def move_dial(num_ticks):
     current_tick = (current_tick + num_ticks) % len(ticks)
 
 if __name__ == "__main__":
-    with open('input.txt') as f:
-        for line in f:
-            rotation = line.strip()
-            direction = rotation[0]
-            value = int(rotation[1:])
-            if direction == 'L':
-                value = -value  # negate
+    for line in sys.stdin:
+        rotation = line.strip()
+        direction = rotation[0]
+        value = int(rotation[1:])
+        if direction == 'L':
+            value = -value  # negate
 
-            move_dial(value)
-            if current_tick == 0:
-                password += 1
+        move_dial(value)
+        if current_tick == 0:
+            password += 1
 
     print('password:', password)

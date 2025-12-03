@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 
 file_content = None
 invalid_id_sum = 0
@@ -26,11 +28,9 @@ def valid_id(num_str):
     return True
 
 if __name__ == "__main__":
-    with open('input.txt') as f:
-        file_content = f.read()
+    file_content = sys.stdin.read()
 
-    ranges = file_content.split(',')
-    for _range in ranges:
+    for _range in file_content.split(','):
         first_id, last_id = (int(_id) for _id in _range.split('-'))
         ids_to_check = range(first_id, last_id + 1)
     
