@@ -11,13 +11,14 @@ import sys
 # dac -> out  11  (does not contain fft)
 # (total: 17018)
 
-START_NODE = 'dac'
-END_NODE   = 'out'
-MAX_DEPTH  = 11
+START_NODE = "dac"
+END_NODE = "out"
+MAX_DEPTH = 11
 
 
 longest_path_seen = 0
 run_counter = 0
+
 
 # depth-first search aglo
 def find_all_paths(graph, start, end, path=None):
@@ -51,6 +52,7 @@ def find_all_paths(graph, start, end, path=None):
 
     return all_paths
 
+
 if __name__ == "__main__":
     input_txt = sys.stdin.read()
 
@@ -69,11 +71,11 @@ if __name__ == "__main__":
 
     graph = {}
 
-    for line in input_txt.split('\n'):
+    for line in input_txt.split("\n"):
         if not line:
             continue
-        device, output_str = line.split(':')
-        outputs = output_str.strip().split(' ')
+        device, output_str = line.split(":")
+        outputs = output_str.strip().split(" ")
         graph[device] = outputs
 
     graph[END_NODE] = []
@@ -84,4 +86,4 @@ if __name__ == "__main__":
     for p in paths:
         print(p)
 
-    print('total:', len(paths))
+    print("total:", len(paths))

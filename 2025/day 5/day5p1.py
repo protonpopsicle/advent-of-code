@@ -10,6 +10,7 @@ def is_fresh(id, id_ranges):
 
     return False
 
+
 if __name__ == "__main__":
     input_txt = sys.stdin.read()
 
@@ -17,10 +18,10 @@ if __name__ == "__main__":
     ids = []
     total_fresh = 0
 
-    ranges_txt, ids_txt = input_txt.split('\n\n')
+    ranges_txt, ids_txt = input_txt.split("\n\n")
 
     for line in ranges_txt.split():
-        _min, _max = line.strip().split('-')
+        _min, _max = line.strip().split("-")
         id_ranges.append((int(_min), int(_max)))
 
     for line in ids_txt.split():
@@ -31,4 +32,4 @@ if __name__ == "__main__":
         if fresh:
             total_fresh += 1
 
-    print('fresh count:', total_fresh)
+    print("fresh count:", total_fresh)

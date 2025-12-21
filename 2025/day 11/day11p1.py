@@ -2,8 +2,8 @@
 
 import sys
 
-START_NODE = 'you'
-END_NODE   = 'out'
+START_NODE = "you"
+END_NODE = "out"
 
 
 # depth-first search aglo
@@ -27,6 +27,7 @@ def find_all_paths(graph, start, end, path=None):
 
     return all_paths
 
+
 if __name__ == "__main__":
     input_txt = sys.stdin.read()
 
@@ -45,11 +46,11 @@ if __name__ == "__main__":
 
     graph = {}
 
-    for line in input_txt.split('\n'):
+    for line in input_txt.split("\n"):
         if not line:
             continue
-        device, output_str = line.split(':')
-        outputs = output_str.strip().split(' ')
+        device, output_str = line.split(":")
+        outputs = output_str.strip().split(" ")
         graph[device] = outputs
 
     graph[END_NODE] = []
@@ -60,4 +61,4 @@ if __name__ == "__main__":
     for p in paths:
         print(p)
 
-    print('total:', len(paths))
+    print("total:", len(paths))
