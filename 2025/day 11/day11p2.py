@@ -2,14 +2,18 @@
 
 import sys
 
-# Ran multiple times for 3 different sub-graphs. Experimented to find the max-depth values
-# will refactor this code to complete the challenge in one run
-# srv -> fft  10
-# (total: 2581)
-# fft -> dac  18
-# (total: 11526061)
-# dac -> out  11  (does not contain fft)
-# (total: 17018)
+"""
+# Run multiple times for 3 different sub-graphs and then multiply totals together*.
+I experimented to find the max-depth values. Keep in mind each user's input files differ.
+
+  srv -> fft  (depth: 10)
+  fft -> dac  (depth: 18)
+  dac -> out  (depth: 11)
+
+*This works because path dac -> out does not contain fft.
+
+TODO: refactor this code to complete the challenge in a single run.
+"""
 
 START_NODE = "dac"
 END_NODE = "out"
